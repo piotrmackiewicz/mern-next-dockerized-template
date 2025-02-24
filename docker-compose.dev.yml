@@ -10,7 +10,7 @@ services:
       - mern-dockerized-network
     volumes:
       - ./frontend:/app
-      - ./frontend/node_modules:/app/node_modules
+      - /app/node_modules/
     command: npm run dev
   database:
     image: mongo:8.0
@@ -51,7 +51,7 @@ services:
       - DB_PASSWORD=password
     volumes:
       - ./backend:/app
-      - ./backend/node_modules:/app/node_modules
+      - /app/node_modules
     ports:
       - 4000:4000
     networks:
